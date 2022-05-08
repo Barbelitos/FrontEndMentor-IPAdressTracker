@@ -1,13 +1,13 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 import headerBackground from "../assets/pattern-bg.png";
 import AddressForm from "./AddressForm";
 
-const Header = () => {
+const Header = ({ getData, handleSearchTerm, inputTerm }) => {
   return (
     <Box
       width="100%"
-      height="30vh"
+      height="19rem"
       sx={{
         background: `url(${headerBackground})`,
         backgroundSize: "cover",
@@ -17,7 +17,11 @@ const Header = () => {
       <Typography color="white" variant="h4" textAlign="center" padding="2rem">
         IP Address Tracker
       </Typography>
-      <AddressForm />
+      <AddressForm
+        getData={getData}
+        handleSearchTerm={handleSearchTerm}
+        inputTerm={inputTerm}
+      />
     </Box>
   );
 };

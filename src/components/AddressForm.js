@@ -2,8 +2,6 @@ import { Button, TextField, Paper, styled } from "@mui/material";
 
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
-// import styles from "./AddressForm.module.css";
-
 const MyButton = styled(Button)`
   color: white;
   background-color: hsl(0, 0%, 17%);
@@ -19,11 +17,9 @@ const MyInput = styled(TextField)`
   outline: none;
 `;
 
-const AddressForm = () => {
-  //   const classes = useStyles();
-
+const AddressForm = ({ getData, handleSearchTerm, inputTerm }) => {
   return (
-    <form>
+    <form onSubmit={getData}>
       <Paper
         elevation={10}
         sx={{
@@ -37,14 +33,10 @@ const AddressForm = () => {
       >
         <MyInput
           placeholder="Search for any IP address or domain"
-          //   sx={{
-          //     borderRadius: "0",
-          //     border: "none",
-          //     width: "92%",
-          //     backgroundColor: "white",
-          //   }}
+          onChange={handleSearchTerm}
+          value={inputTerm}
         />
-        <MyButton variant="contained">
+        <MyButton type="submit" variant="contained">
           <ArrowForwardIosIcon />
         </MyButton>
       </Paper>
