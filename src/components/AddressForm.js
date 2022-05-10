@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Button, TextField, Paper, styled } from "@mui/material";
 
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -17,9 +18,9 @@ const MyInput = styled(TextField)`
   outline: none;
 `;
 
-const AddressForm = ({ getData, handleSearchTerm, inputTerm }) => {
+const AddressForm = ({ searchTerm, searchHandler, submitHandler }) => {
   return (
-    <form onSubmit={getData}>
+    <form onSubmit={submitHandler}>
       <Paper
         elevation={10}
         sx={{
@@ -33,8 +34,8 @@ const AddressForm = ({ getData, handleSearchTerm, inputTerm }) => {
       >
         <MyInput
           placeholder="Search for any IP address or domain"
-          onChange={handleSearchTerm}
-          value={inputTerm}
+          onChange={searchHandler}
+          value={searchTerm}
         />
         <MyButton type="submit" variant="contained">
           <ArrowForwardIosIcon />

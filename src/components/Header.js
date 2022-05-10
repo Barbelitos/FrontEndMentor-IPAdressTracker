@@ -3,7 +3,12 @@ import { Box, Typography } from "@mui/material";
 import headerBackground from "../assets/pattern-bg.png";
 import AddressForm from "./AddressForm";
 
-const Header = ({ getData, handleSearchTerm, inputTerm }) => {
+const Header = ({
+  searchHandler,
+  submitHandler,
+  handleSearchTerm,
+  searchTerm,
+}) => {
   return (
     <Box
       width="100%"
@@ -18,9 +23,9 @@ const Header = ({ getData, handleSearchTerm, inputTerm }) => {
         IP Address Tracker
       </Typography>
       <AddressForm
-        getData={getData}
-        handleSearchTerm={handleSearchTerm}
-        inputTerm={inputTerm}
+        searchHandler={searchHandler}
+        submitHandler={submitHandler}
+        searchTerm={searchTerm}
       />
     </Box>
   );

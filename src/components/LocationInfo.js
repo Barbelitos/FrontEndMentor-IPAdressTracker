@@ -27,22 +27,26 @@ const LocationInfo = ({ locationData, location }) => {
     <MyCard variant="outlined">
       <Box>
         <Typography variant="overline">IP Address</Typography>
-        <Typography variant="h5">{locationData.ip}</Typography>
+        <Typography variant="h5">222.222.222.22</Typography>
+        {/* <Typography variant="h5">{locationData.ip}</Typography> */}
       </Box>
       <VerticalLine />
       <Box>
         <Typography variant="overline">Location</Typography>
-        <Typography variant="h5">{location.city}</Typography>
+        <Typography variant="h5">Lisboa</Typography>
+        {/* <Typography variant="h5">{location.city}</Typography> */}
       </Box>
       <VerticalLine />
       <Box>
         <Typography variant="overline">Time Zone</Typography>
-        <Typography variant="h5">UTC {location.timezone}</Typography>
+        <Typography variant="h5">UTC +1</Typography>
+        {/* <Typography variant="h5">UTC {location.timezone}</Typography> */}
       </Box>
       <VerticalLine />
       <Box>
         <Typography variant="overline">ISP</Typography>
-        <Typography variant="h5">{locationData.isp}</Typography>
+        <Typography variant="h5">ISP</Typography>
+        {/* <Typography variant="h5">{locationData.isp}</Typography> */}
       </Box>
     </MyCard>
   );
