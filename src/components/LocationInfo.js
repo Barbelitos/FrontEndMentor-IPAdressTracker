@@ -1,4 +1,3 @@
-import { NoEncryption } from "@mui/icons-material";
 import { Card, styled, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
@@ -8,7 +7,6 @@ const MyCard = styled(Card)(({ theme }) => ({
   position: "absolute",
   display: "flex",
   justifyContent: "space-around",
-  alignItems: "center",
   gap: "2rem",
   height: "200px",
   width: "80%",
@@ -21,9 +19,17 @@ const MyCard = styled(Card)(({ theme }) => ({
 
   [theme.breakpoints.down("md")]: {
     flexDirection: "column",
-    height: "400px",
-    gap: ".8rem",
+    height: "fit-content",
+    gap: ".2rem",
     textAlign: "center",
+  },
+}));
+
+const InfoText = styled(Typography)(({ theme }) => ({
+  fontSize: "2rem",
+
+  [theme.breakpoints.down("md")]: {
+    fontSize: "1.5rem",
   },
 }));
 
@@ -37,39 +43,35 @@ const VerticalLine = styled(Box)(({ theme }) => ({
   },
 }));
 
-// `
-//   border-left: 1px solid hsl(0, 0%, 59%);
-//   opacity: 0.4;
-//   height: 80%;
-// `;
-
 const LocationInfo = ({ ipData }) => {
   return (
-    <MyCard className={styles.info_card}>
+    <MyCard sx={{ textAlign: "center" }} className={styles.info_card}>
       <Box>
-        <Typography color="grey" variant="overline">
+        <Typography sx={{ color: "hsl(0, 0%, 59%)" }} variant="button">
           IP Address
         </Typography>
-        {/* <Typography variant="h5">222.222.222.22</Typography> */}
-        <Typography variant="h5">{ipData.ip}</Typography>
+        <InfoText>{ipData.ip}</InfoText>
       </Box>
       <VerticalLine />
       <Box>
-        <Typography variant="overline">Location</Typography>
-        {/* <Typography variant="h5">Lisboa</Typography> */}
-        <Typography variant="h5">{ipData.city}</Typography>
+        <Typography sx={{ color: "hsl(0, 0%, 59%)" }} variant="button">
+          Location
+        </Typography>
+        <InfoText>{ipData.city}</InfoText>
       </Box>
       <VerticalLine />
       <Box>
-        <Typography variant="overline">Time Zone</Typography>
-        {/* <Typography variant="h5">UTC +1</Typography> */}
-        <Typography variant="h5">UTC {ipData.timezone}</Typography>
+        <Typography sx={{ color: "hsl(0, 0%, 59%)" }} variant="button">
+          Time Zone
+        </Typography>
+        <InfoText>UTC {ipData.timezone}</InfoText>
       </Box>
       <VerticalLine />
       <Box>
-        <Typography variant="overline">ISP</Typography>
-        {/* <Typography variant="h5">ISP</Typography> */}
-        <Typography variant="h5">{ipData.isp}</Typography>
+        <Typography sx={{ color: "hsl(0, 0%, 59%)" }} variant="button">
+          ISP
+        </Typography>
+        <InfoText>{ipData.isp}</InfoText>
       </Box>
     </MyCard>
   );

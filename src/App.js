@@ -3,8 +3,6 @@ import Header from "./components/Header";
 import Map from "./components/Map";
 import LocationInfo from "./components/LocationInfo";
 
-// import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-
 import "./App.css";
 
 function App() {
@@ -46,7 +44,7 @@ function App() {
     <div className="App">
       <Header handleSearch={handleSearch} />
       <LocationInfo ipData={ipData} />
-      <Map position={position} />
+      <Map position={position} ipData={ipData} />
     </div>
   );
 }
