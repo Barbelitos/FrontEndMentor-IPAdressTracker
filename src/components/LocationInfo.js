@@ -1,8 +1,6 @@
 import { Card, styled, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
-import styles from "./LocationInfo.module.css";
-
 const MyCard = styled(Card)(({ theme }) => ({
   position: "absolute",
   display: "flex",
@@ -45,7 +43,7 @@ const VerticalLine = styled(Box)(({ theme }) => ({
 
 const LocationInfo = ({ ipData }) => {
   return (
-    <MyCard sx={{ textAlign: "center" }} className={styles.info_card}>
+    <MyCard sx={{ textAlign: "center" }}>
       <Box>
         <Typography sx={{ color: "hsl(0, 0%, 59%)" }} variant="button">
           IP Address
